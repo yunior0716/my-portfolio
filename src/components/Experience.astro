@@ -1,0 +1,22 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+const EXPERIENCE = [
+  {
+    date: 'Septiembre 2023',
+    title: 'Auxiliar de Operaciones - PG Contratistas',
+    description:
+      'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
+    link: '',
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

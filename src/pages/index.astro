@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
+import AddresBook from '../components/icons/AddresBook.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout
+  title="Delio Díaz - Ingeniero de software"
+  description="Ingeniero de software, estudiante de ingeniería de software, desarrollador web, desarrollador de aplicaciones móviles "
+>
+  <main class="px-4">
+    <SectionContainer id="inicio" class="py-40 pb-32">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="foto-portfolio.jpeg"
+        alt="delio diaz"
+      />
+
+      <h1
+        class="text-white text-2xl md:text-4-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, soy Delio Díaz <a
+          href="https://www.linkedin.com/in/delio-yunior-d%C3%ADaz-9b2a5b294/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+        +2 años de experiencia. <span class="text-yellow-200/90 opacity-80"
+          >Estudiante de ingeniería de software
+        </span>👨‍💻. De Republica Dominicana 🇩🇴, Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Quasi distinctio quidem est explicabo
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/delio-yunior-d%C3%ADaz-9b2a5b294/"
+        >
+          <LinkedInIcon class="size-4 md:size-6" /> LinkedIn
+        </SocialPill>
+
+        <SocialPill href="https://github.com/yunior0716">
+          <GitHubIcon class="size-4 md:size-6" /> GitHub
+        </SocialPill>
+
+        <SocialPill href="mailto:delioydiaz@gmail.com">
+          <MailIcon class="size-4 md:size-6" /> delioydiaz@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-8" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="contacto">
+      <h2 class="text-3xl font-semibold mb-12 flex gap-x-3 items-center">
+        <AddresBook class="size-8" />
+        Contacto
+      </h2>
+      <Contact />
+    </SectionContainer>
+  </main>
+</Layout>
