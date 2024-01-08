@@ -1,0 +1,116 @@
+<div
+  id="animation-carousel"
+  class="relative w-full mb-8"
+  data-carousel="static"
+>
+  <!-- Carousel wrapper -->
+  <div
+    class="relative overflow-hidden rounded shadow-2xl shadow-white/10 md:h-96"
+  >
+    <!-- Item 1 -->
+    <slot />
+  </div>
+  <!-- Slider controls -->
+  <button
+    type="button"
+    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-prev
+  >
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+      <svg
+        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 6 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 1 1 5l4 4"></path>
+      </svg>
+      <span class="sr-only">Previous</span>
+    </span>
+  </button>
+  <button
+    type="button"
+    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-next
+  >
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+      <svg
+        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 6 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 9 4-4-4-4"></path>
+      </svg>
+      <span class="sr-only">Next</span>
+    </span>
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.getElementById('animation-carousel');
+    const prevButton = carousel?.querySelector<HTMLButtonElement>(
+      '[data-carousel-prev]'
+    );
+    const nextButton = carousel?.querySelector<HTMLButtonElement>(
+      '[data-carousel-next]'
+    );
+    const items = carousel?.querySelectorAll<HTMLDivElement>(
+      '[data-carousel-item]'
+    );
+
+    let currentSlide = 0;
+
+    function showSlide(index: number) {
+      items?.forEach((item, i) => {
+        if (i === index) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    function goToSlide(index: number) {
+      if (index >= 0 && index < (items?.length || 0)) {
+        currentSlide = index;
+        showSlide(currentSlide);
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener('click', prevSlide);
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', nextSlide);
+    }
+
+    showSlide(currentSlide);
+  });
+</script>

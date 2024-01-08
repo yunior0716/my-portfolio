@@ -1,0 +1,42 @@
+---
+import { TAGS } from './Tags.astro';
+
+export const PROJECTS = [
+  {
+    title: 'DyverseTech Ecommerce',
+    description:
+      'Ecoomerce de una tienda de productos tecnologicos utilizando tecnologías como laravel para el backend, blade, html y css para el frontend y mySql como gestor de base de datos. Tiene un panel de administración para gestionar los productos, categorias, usuarios, etc.',
+    link: '',
+    github: '#',
+    image: [
+      'login.png',
+      'home.png',
+      'home-products.png',
+      'products.png',
+      'cart.png',
+      'admin.png',
+    ],
+    tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS],
+  },
+
+  {
+    title: 'Blackjack game',
+    description:
+      'Sencillo juego de Blackjack utilizando tecnologías como Vanilla JavaScript y Vite.js. Este proyecto combina la simplicidad de Vanilla JavaScript con la eficiencia de Vite.js.',
+    link: 'https://delio-blackjack.netlify.app/',
+    github: '#',
+    image: ['blackjack.webp'],
+    tags: [TAGS.JS, TAGS.VITE],
+  },
+
+  {
+    title: 'Todo App',
+    description:
+      'Aplicacion de tareas pendientes utilizando tecnologías como Vanilla JavaScript y Vite.js utilizando el LocalStorage para almacenar las tareas.Tiene filtros por tareas pendientes, completadas y todas.',
+    link: 'https://delio-todo-app.netlify.app/',
+    github: '#',
+    image: ['todo-app.webp'],
+    tags: [TAGS.JS, TAGS.VITE],
+  },
+];
+---

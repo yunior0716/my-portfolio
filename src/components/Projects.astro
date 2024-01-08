@@ -1,47 +1,11 @@
 ---
-import GitHub from './icons/GitHub.astro';
-const TAGS = {
-  NEXT: {
-    name: 'Next.js',
-    class: 'bg-black text-white',
-    icon: GitHub,
-  },
-
-  TAILWIND: {
-    name: 'Tailwind CSS',
-    class: 'bg-[#003159] text-white',
-    icon: GitHub,
-  },
-
-  JS: {
-    name: 'JavaScript',
-    class: 'bg-[#003159] text-white',
-    icon: GitHub,
-  },
-
-  VITE: {
-    name: 'Vite.js',
-    class: 'bg-[#003159] text-white',
-    icon: GitHub,
-  },
-};
-
-const PROJECTS = [
-  {
-    title: 'Blackjack game',
-    description:
-      'Emocionante juego de Blackjack utilizando tecnologías como Vanilla JavaScript y Vite.js. Este proyecto combina la simplicidad de Vanilla JavaScript con la eficiencia de Vite.js para ofrecer una experiencia de juego rápida y envolvente.',
-    link: 'https://delio-blackjack.netlify.app/',
-    github: '#',
-    image: 'blackjack.webp',
-    tags: [TAGS.JS, TAGS.VITE],
-  },
-];
+import ImageCarousel from './ImageCarousel.astro';
+import { PROJECTS } from './ProjectList.astro';
 ---
 
 {
   PROJECTS.map(({ link, image, title, description, tags }) => (
-    <article>
+    <article class="mb-20">
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">
@@ -56,24 +20,40 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10 mb-8"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${title}`}
-      />
+
+      {image.length > 1 ? (
+        <ImageCarousel>
+          {image.map((img) => (
+            <div class="" data-carousel-item="active">
+              <img
+                src={img}
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  "
+                alt="..."
+              />
+            </div>
+          ))}
+        </ImageCarousel>
+      ) : (
+        <img
+          class="rounded shadow-2xl shadow-white/10 mb-8"
+          src={image[0]}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      )}
+
       {link && (
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white/5 
-    border dark:border-white/10 border-gray-300
-    rounded-full
-    inline-flex justify-center items-center gap-x-2
-    py-1 px-2 md:py-2 md:px-4
-    text-xs md:text-base
-    transition
-    hover:scale-110 hover:bg-white/10"
+          border dark:border-white/10 border-gray-300
+          rounded-full
+          inline-flex justify-center items-center gap-x-2
+          py-1 px-2 md:py-2 md:px-4
+          text-xs md:text-base
+          transition
+          hover:scale-110 hover:bg-white/10"
         >
           Ver sitio...{' '}
           <svg
