@@ -15,35 +15,41 @@ import Contact from '../components/Contact.astro';
 ---
 
 <Layout
-  title="Delio Díaz - Ingeniero de software"
-  description="Ingeniero de software, estudiante de ingeniería de software, desarrollador web, desarrollador de aplicaciones móviles "
+  title="Delio Yunior Díaz | Ingeniero de software"
+  description="Ingeniero de software y Educador tecnológico, Desarrollador Fullstack con enfoque en Backend, especializado en desarrollo web. Enseño programación y preparo a estudiantes para certificaciones como IT Specialist (Certiport)"
+  keywords="Delio Yunior Díaz, Delio Diaz, Delio Yunior Diaz Henriquez, ingeniero de software, desarrollador web, aplicaciones móviles, educación tecnológica, IT Specialist, Microsoft Office Specialist"
+  image="https://deliodiaz.dev/foto-portada.jpg"
 >
-  <main class="px-4">
-    <SectionContainer id="inicio" class="py-40 pb-32">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="foto-portfolio.jpeg"
-        alt="delio diaz"
-      />
+  <main class="px-4 max-w-[700px] mx-auto">
+    <SectionContainer id="inicio" class="py-12 pb-24">
+      <div class="flex flex-col items-center">
+        <img
+          class="rounded-full size-72 mb-6 object-cover"
+          src="foto-portada.jpg"
+          alt="delio diaz"
+        />
+      </div>
 
       <h1
-        class="text-white text-2xl md:text-4-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+        class="text-white text-2xl md:text-4-xl lg:text-5xl font-bold pb-6 lg:pb-10 text-center"
       >
         Hola, soy Delio Díaz
       </h1>
-      <h2 class="text-xl lg:text-2xl opacity-80 text-pretty max-w-[700px]">
-        +3 años de experiencia. <span class="text-yellow-200/90 opacity-80"
-          >Full stack developer y computer science teacher
-        </span>.👨‍💻 De República Dominicana. 🇩🇴 <br />
+      <h2
+        class="text-xl lg:text-2xl opacity-80 text-pretty text-left"
+        lang="es"
+      >
+        +4 años de experiencia. <span class="text-sky-400/90 opacity-90"
+          >Ingeniero de Software y Educador tecnológico</span
+        >. 👨‍💻 De República Dominicana. 🇩🇴 <br />
         <br /> Desarrollador fullstack con enfoque en Backend, especializado en desarrollo
-        web. Apasionado por la tecnología, enseño programación y habilidades digitales
-        para el mundo real.
+        web. Apasionado por la tecnología, enseño programación y preparo a estudiantes
+        para certificaciones internacionales como IT Specialist (Certiport) y Microsoft
+        Office Specialist.
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill
-          href="https://www.linkedin.com/in/delio-yunior-d%C3%ADaz-9b2a5b294/"
-        >
+        <SocialPill href="https://www.linkedin.com/in/delio-diaz/">
           <LinkedInIcon class="size-4 md:size-6" /> LinkedIn
         </SocialPill>
 
@@ -68,7 +74,7 @@ import Contact from '../components/Contact.astro';
     <SectionContainer id="proyectos" class="pb-6 md:pb-16">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-8" />
-        Proyectos
+        Proyectos Destacados
       </h2>
       <Projects />
     </SectionContainer>
