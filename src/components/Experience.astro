@@ -2,16 +2,30 @@
 import ExperienceItem from './ExperienceItem.astro';
 const EXPERIENCE = [
   {
+    date: 'Jul. 2024 - Actualidad',
+    title: 'Computer Science Teacher - New Horizons Bilingual School',
+    description:
+      'Diseño e implementación de una especialidad en desarrollo web, preparo alumnos para obtener certificaciones internacionales como Microsoft Office Specialist e IT Specialist (Certiport). Integro herramientas como Minecraft Education, Scratch y CodeCombat fomentando la creatividad, el razonamiento lógico y la capacidad para resolver problemas.',
+  },
+
+  {
+    date: 'Feb. 2024 - May. 2024',
+    title:
+      'Docente de Programación y Desarrollo Web - Centro Cristiano Amanecer',
+    description:
+      'Durante un período de 3 meses, asumí la responsabilidad como docente suplente en el técnico profesional Desarrollo y Administración de Aplicaciones Informáticas. En este rol, impartí asignaturas clave como: análisis y diseño de sistemas (diagramas de flujo, casos de uso), programación de aplicaciones con C++ y desarrollo web front-end con HTML, CSS y JavaScript.',
+  },
+
+  {
     date: 'Feb. 2021 - Sept. 2023',
     title: 'Auxiliar de Operaciones - PG Contratistas',
     description:
       'Realicé distintas labores, entre ellas: generación de reportes fotográficos detallados, gestión del software GPS de la empresa y gestión de plataformas web para distintos proyectos.',
-    link: '',
   },
 ];
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">
+<ol class="relative border-s border-slate-800/50 dark:border-gray-200 ml-3">
   {
     EXPERIENCE.map((experiencie) => (
       <li class="mb-10 ms-4">

@@ -1,3 +1,7 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
 <header
   class={`
     flex justify-center items-center
@@ -10,26 +14,34 @@
 >
   <nav
     class={`
-      border border-[#202030] rounded-full
+      border border-[#E3E3F3] rounded-full
+      bg-[#E3E3F3]/90
       px-3 py-1
       flex flex-row items-center
-      bg-[#202030]/90
       backdrop-blur-2xl
+      dark:bg-[#202030]/90
+      dark:border-[#202030]
+      
     `}
   >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#inicio"
-      >Inicio</a
+    <a
+      class="hover:bg-black/10 rounded-full px-3 transition dark:hover:bg-white/10"
+      href="#inicio">Inicio</a
     >
     <a
-      class="hover:bg-white/10 rounded-full px-3 transition"
+      class="hover:bg-black/10 rounded-full px-3 transition dark:hover:bg-white/10"
       href="#experiencia">Experiencia</a
     >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
-      >Proyectos</a
+    <a
+      class="hover:bg-black/10 rounded-full px-3 transition dark:hover:bg-white/10"
+      href="#proyectos">Proyectos</a
     >
 
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#contacto"
-      >Contacto</a
+    <a
+      class="hover:bg-black/10 rounded-full px-3 transition dark:hover:bg-white/10"
+      href="#contacto">Contacto</a
     >
+
+    <ThemeToggle />
   </nav>
 </header>

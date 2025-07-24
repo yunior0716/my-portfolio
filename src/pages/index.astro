@@ -12,6 +12,7 @@ import CodeIcon from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
 import AddresBook from '../components/icons/AddresBook.astro';
 import Contact from '../components/Contact.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout
@@ -22,45 +23,7 @@ import Contact from '../components/Contact.astro';
 >
   <main class="px-4 max-w-[700px] mx-auto">
     <SectionContainer id="inicio" class="py-12 pb-24">
-      <div class="flex flex-col items-center">
-        <img
-          class="rounded-full size-72 mb-6 object-cover"
-          src="foto-portada.jpg"
-          alt="delio diaz"
-        />
-      </div>
-
-      <h1
-        class="text-white text-2xl md:text-4-xl lg:text-5xl font-bold pb-6 lg:pb-10 text-center"
-      >
-        Hola, soy Delio Díaz
-      </h1>
-      <h2
-        class="text-xl lg:text-2xl opacity-80 text-pretty text-left"
-        lang="es"
-      >
-        +4 años de experiencia. <span class="text-sky-400/90 opacity-90"
-          >Ingeniero de Software y Educador tecnológico</span
-        >. 👨‍💻 De República Dominicana. 🇩🇴 <br />
-        <br /> Desarrollador fullstack con enfoque en Backend, especializado en desarrollo
-        web. Apasionado por la tecnología, enseño programación y preparo a estudiantes
-        para certificaciones internacionales como IT Specialist (Certiport) y Microsoft
-        Office Specialist.
-      </h2>
-
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/delio-diaz/">
-          <LinkedInIcon class="size-4 md:size-6" /> LinkedIn
-        </SocialPill>
-
-        <SocialPill href="https://github.com/yunior0716">
-          <GitHubIcon class="size-4 md:size-6" /> GitHub
-        </SocialPill>
-
-        <SocialPill href="mailto:delioydiaz@gmail.com">
-          <MailIcon class="size-4 md:size-6" /> delioydiaz@gmail.com
-        </SocialPill>
-      </nav>
+      <Hero />
     </SectionContainer>
 
     <SectionContainer id="experiencia" class="pb-16">

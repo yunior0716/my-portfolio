@@ -40,7 +40,9 @@ const { description, title, keywords, image } = Astro.props;
   </head>
   <body class="relative">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full
+            bg-white dark:bg-neutral-950
+            bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <Header />
@@ -51,6 +53,16 @@ const { description, title, keywords, image } = Astro.props;
 <style is:global>
   :root {
     color-scheme: light dark;
+
+    --text-primary: 67 56 202;
+    --text-secondary: 99 102 241;
+    --accent: 79 70 229 / 0.6;
+  }
+
+  .dark {
+    --text-primary: 56 189 248 / 0.9;
+    --text-secondary: 56 189 248;
+    --accent: 147 197 253 / 0.7;
   }
   html {
     font-family: 'Onest Variable', system-ui, sans-serif;
@@ -62,6 +74,11 @@ const { description, title, keywords, image } = Astro.props;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: #1f2937;
+  }
+
+  .dark body {
+    color: #ffffff;
   }
 
   @media (prefers-reduced-motion: reduce) {
