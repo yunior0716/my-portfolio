@@ -1,8 +1,4 @@
-<div
-  id="animation-carousel"
-  class="relative w-full mb-8"
-  data-carousel="static"
->
+<div class="relative w-full mb-8" data-carousel="static">
   <!-- Carousel wrapper -->
   <div
     class="relative overflow-hidden rounded shadow-2xl shadow-black/50 dark:shadow-white/10 h-[216px] md:h-[416px]"
@@ -70,52 +66,52 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.getElementById('animation-carousel');
-    const prevButton = carousel?.querySelector<HTMLButtonElement>(
-      '[data-carousel-prev]'
-    );
-    const nextButton = carousel?.querySelector<HTMLButtonElement>(
-      '[data-carousel-next]'
-    );
-    const items = carousel?.querySelectorAll<HTMLDivElement>(
-      '[data-carousel-item]'
-    );
+    const carousels = document.querySelectorAll('[data-carousel="static"]');
 
-    let currentSlide = 0;
+    carousels.forEach((carousel) => {
+      const prevButton = carousel.querySelector('[data-carousel-prev]');
+      const nextButton = carousel.querySelector('[data-carousel-next]');
+      const items = carousel.querySelectorAll('[data-carousel-item="true"]');
 
-    function showSlide(index: number) {
-      items?.forEach((item, i) => {
-        if (i === index) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    }
+      let currentSlide = 0;
 
-    function goToSlide(index: number) {
-      if (index >= 0 && index < (items?.length || 0)) {
-        currentSlide = index;
-        showSlide(currentSlide);
+      function showSlide(index: number) {
+        items.forEach((item, i) => {
+          if (i === index) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
       }
-    }
 
-    function nextSlide() {
-      goToSlide(currentSlide + 1);
-    }
+      function goToSlide(index: number) {
+        if (items && index >= 0 && index < items.length) {
+          currentSlide = index;
+          showSlide(currentSlide);
+        }
+      }
 
-    function prevSlide() {
-      goToSlide(currentSlide - 1);
-    }
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % (items.length || 1);
+        goToSlide(nextIndex);
+      }
 
-    if (prevButton) {
-      prevButton.addEventListener('click', prevSlide);
-    }
+      function prevSlide() {
+        const prevIndex =
+          currentSlide === 0 ? (items.length || 1) - 1 : currentSlide - 1;
+        goToSlide(prevIndex);
+      }
 
-    if (nextButton) {
-      nextButton.addEventListener('click', nextSlide);
-    }
+      if (prevButton) {
+        prevButton.addEventListener('click', prevSlide);
+      }
 
-    showSlide(currentSlide);
+      if (nextButton) {
+        nextButton.addEventListener('click', nextSlide);
+      }
+
+      showSlide(currentSlide);
+    });
   });
 </script>

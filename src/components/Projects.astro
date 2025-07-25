@@ -27,7 +27,10 @@ import { PROJECTS } from './ProjectList.astro';
       {image.length > 1 ? (
         <ImageCarousel>
           {image.map((img, index) => (
-            <div class="" data-carousel-item="active">
+            <div
+              class={`${index === 0 ? '' : 'hidden'}`}
+              data-carousel-item="true"
+            >
               <img
                 src={img}
                 class="w-full h-full object-cover"
