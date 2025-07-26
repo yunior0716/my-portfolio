@@ -7,58 +7,87 @@ import { PROJECTS } from './ProjectList.astro';
 ---
 
 {
-  PROJECTS.map(({ link, image, title, description, tags, github }) => (
-    <article class="mb-20">
-      <h3 class="text-2xl font-semibold text-secondary-text mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-
-      {image.length > 1 ? (
-        <ImageCarousel>
-          {image.map((img, index) => (
-            <div
-              class={`${index === 0 ? '' : 'hidden'}`}
-              data-carousel-item="true"
-            >
-              <img
-                src={img}
-                class="w-full h-full object-cover"
-                alt={`Captura ${index + 1} del proyecto ${title}`}
-              />
-            </div>
+  PROJECTS.map(
+    ({
+      link,
+      image,
+      title,
+      description,
+      tags,
+      github,
+      frontend,
+      backend,
+      progress,
+    }) => (
+      <article class="mb-20">
+        <h3 class="text-2xl font-semibold text-secondary-text mb-2">
+          {title}
+          {progress && <span class="ml-2 text-sm text-accent">{progress}</span>}
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
           ))}
-        </ImageCarousel>
-      ) : (
-        <img
-          class="rounded shadow-2xl shadow-black/50 dark:shadow-white/10 mb-8"
-          src={image[0]}
-          alt={`Captura de pantalla del proyecto ${title}`}
-        />
-      )}
+        </ul>
 
-      {link ? (
-        <ExternalLink href={link}>
-          <LinkIcon class="size-4 md:size-6" /> Preview
-        </ExternalLink>
-      ) : null}
+        {image.length > 1 ? (
+          <ImageCarousel>
+            {image.map((img, index) => (
+              <div
+                class={`${index === 0 ? '' : 'hidden'}`}
+                data-carousel-item="true"
+              >
+                <img
+                  src={img}
+                  class="w-full h-full object-cover"
+                  alt={`Captura ${index + 1} del proyecto ${title}`}
+                />
+              </div>
+            ))}
+          </ImageCarousel>
+        ) : (
+          <img
+            class="rounded shadow-2xl shadow-black/50 dark:shadow-white/10 mb-8"
+            src={image[0]}
+            alt={`Captura de pantalla del proyecto ${title}`}
+          />
+        )}
 
-      {github ? (
-        <ExternalLink href={github}>
-          <BranchGitIcon class="size-4 md:size-6" />
-          Repo
-        </ExternalLink>
-      ) : null}
-    </article>
-  ))
+        {link ? (
+          <ExternalLink href={link}>
+            <LinkIcon class="size-4 md:size-6" /> Preview
+          </ExternalLink>
+        ) : null}
+
+        {github ? (
+          <ExternalLink href={github}>
+            <BranchGitIcon class="size-4 md:size-6" />
+            Code
+          </ExternalLink>
+        ) : null}
+
+        {frontend ? (
+          <ExternalLink href={frontend}>
+            <BranchGitIcon class="size-4 md:size-6" />
+            Frontend
+          </ExternalLink>
+        ) : null}
+
+        {backend ? (
+          <ExternalLink href={backend}>
+            <BranchGitIcon class="size-4 md:size-6" />
+            Backend
+          </ExternalLink>
+        ) : null}
+      </article>
+    )
+  )
 }

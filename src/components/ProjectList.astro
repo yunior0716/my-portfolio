@@ -3,11 +3,30 @@ import { TAGS } from './Tags.astro';
 
 export const PROJECTS = [
   {
+    title: 'Car App',
+    description:
+      'Aplicación móvil full-stack diseñada para dealers de autos. Permite a los dealers publicar, editar y eliminar anuncios de autos, gestionar citas con clientes interesados, y recibir notificaciones sobre interacciones en tiempo real. Los compradores pueden explorar fácilmente los vehículos disponibles y agendar citas para visitas o pruebas. La app está desarrollada con Flutter para la interfaz móvil, utiliza Node.js con Express en el backend y MongoDB como base de datos.',
+    link: '',
+    github: '',
+    frontend: 'https://github.com/yunior0716/cars-app-flutter',
+    backend: 'https://github.com/yunior0716/api-rest-cars',
+    image: [
+      'projects/car-app/first.avif',
+      'projects/car-app/second.avif',
+      'projects/car-app/third.avif',
+    ],
+    tags: [TAGS.FLUTTER, TAGS.NODEJS, TAGS.MONGODB],
+    progress: '(En proceso)',
+  },
+
+  {
     title: 'DyverseTech Ecommerce',
     description:
       'Ecommerce de una tienda de productos tecnológicos utilizando tecnologías como laravel para el backend, blade, html y css para el frontend y mySql como gestor de base de datos. Tiene un panel de administración para gestionar los productos, categorias, usuarios, etc.',
     link: '',
     github: 'https://github.com/yunior0716/Dyversetech',
+    frontend: '',
+    backend: '',
     image: [
       'projects/dyversetech/login.webp',
       'projects/dyversetech/home.webp',
@@ -16,7 +35,8 @@ export const PROJECTS = [
       'projects/dyversetech/cart.webp',
       'projects/dyversetech/admin.webp',
     ],
-    tags: [TAGS.LARAVEL, TAGS.JS, TAGS.HTML, TAGS.CSS],
+    tags: [TAGS.LARAVEL, TAGS.JS, TAGS.HTML, TAGS.CSS, TAGS.SQL],
+    progress: '',
   },
 
   {
@@ -25,6 +45,8 @@ export const PROJECTS = [
       'Aplicación para gestionar propiedades inmobiliarias construida con Laravel, Bootstrap y mySql como gestor de base de datos. La plataforma permite gestionar propiedades, clientes, citas, reportes, así como facturación y cobros. También cuenta con un sistema de autenticación de usuarios para controlar el acceso de forma segura.',
     link: '',
     github: 'https://github.com/yunior0716/winmars-app',
+    frontend: '',
+    backend: '',
     image: [
       'projects/inmobiliaria/home.avif',
       'projects/inmobiliaria/properties.avif',
@@ -36,18 +58,19 @@ export const PROJECTS = [
       'projects/inmobiliaria/procesos.avif',
       'projects/inmobiliaria/consulta-factura.avif',
     ],
-    tags: [TAGS.LARAVEL, TAGS.JS, TAGS.BOOTSTRAP],
+    tags: [TAGS.LARAVEL, TAGS.JS, TAGS.BOOTSTRAP, TAGS.SQL],
+    progress: '',
   },
 
-  {
-    title: 'Blackjack game',
-    description:
-      'Sencillo juego de Blackjack utilizando tecnologías como Vanilla JavaScript y Vite.js. Este proyecto combina la simplicidad de Vanilla JavaScript con la eficiencia de Vite.js.',
-    link: 'https://delio-blackjack.netlify.app/',
-    github: 'https://github.com/yunior0716/js-vite-blackjack',
-    image: ['projects/blackjack.webp'],
-    tags: [TAGS.JS, TAGS.VITE],
-  },
+  // {
+  //   title: 'Blackjack game',
+  //   description:
+  //     'Sencillo juego de Blackjack utilizando tecnologías como Vanilla JavaScript y Vite.js. Este proyecto combina la simplicidad de Vanilla JavaScript con la eficiencia de Vite.js.',
+  //   link: 'https://delio-blackjack.netlify.app/',
+  //   github: 'https://github.com/yunior0716/js-vite-blackjack',
+  //   image: ['projects/blackjack.webp'],
+  //   tags: [TAGS.JS, TAGS.VITE],
+  // },
 
   // {
   //   title: 'Todo App',
