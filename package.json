@@ -15,7 +15,11 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.2",
     "astro": "^5.12.3",
+    "swiper": "^11.2.10",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/swiper": "^6.0.0"
   }
 }
